@@ -60,15 +60,11 @@ class Comments {
   async getComments() {
     const film = await Film.findOne({ where: { episode_id: this.data } });
     console.log(film);
-    const comments = await Comment.findOne({
+    const comments = await Comment.find({
       where: { commentable_id: film.episode_id },
     });
 
-    return {
-      message: "Comments retrieved successfully for movie" + this.data,
-      ip_address: comments.ip_address,
-      data: _.sortBy(comments, "release_date"),
-    };
+    return comments;
 
     //   .then((dd) => {
     // if (!dd) {

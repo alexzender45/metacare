@@ -22,7 +22,7 @@ exports.addComment = async (req, res) => {
 exports.getComments = async (req, res) => {
   try {
     const movies = await new Comments(req.params.movieId).getComments();
-    return success(res, movies);
+    return success(res, { data: movies });
   } catch (err) {
     logger.error("Unable to complete request", err);
     return error(res, { code: err.code, message: err.message });
