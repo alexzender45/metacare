@@ -65,30 +65,6 @@ class Comments {
     });
 
     return comments;
-
-    //   .then((dd) => {
-    // if (!dd) {
-    //   throwError("Movie Id does not exist");
-    // } else {
-    //   commentSchema
-    // .find({ commentable_id: dd.episode_id })
-    // .exec()
-    // .then((doccumen) => {
-    //   if (doccumen.length !== 0) {
-    // results = {
-    //   status: true,
-    //   message: "Comment retrieved for Movie number " + this.data,
-    //   ip_address: doccumen.ip_address,
-    //   data: _.sortBy(doccumen, "release_date"),
-    // };
-    //   } else {
-    // throwError("No comments found for this movie");
-    //   }
-    // });
-    // }
-    //   });
-    // console.log(check);
-    // return results;
   }
 }
 
