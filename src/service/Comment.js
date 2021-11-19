@@ -36,10 +36,12 @@ class Comments {
         };
         Comment.create(comm);
         let Allow = Film.findOne({ episode_id: comm.commentable_id });
-        Film.update(
-          { comment_count: Allow.comment_count + 1 },
-          { where: { episode_id: comm.commentable_id } }
-        );
+        Allow.then((doc) => {
+          Film.update(
+            { comment_count: doc.comment_count + 1 },
+            { where: { episode_id: comm.commentable_id } }
+          );
+        });
         return {
           status: true,
           message: "comment created successfully",
