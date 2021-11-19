@@ -8,7 +8,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development";
 const config = dbConfig[env];
 const db = {};
-
+// connect to the database
 let sequelize;
 sequelize = new Sequelize(DB_DEV_URL, {
   dialect: "postgres",

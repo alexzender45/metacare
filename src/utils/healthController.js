@@ -1,4 +1,4 @@
-const { BaseController } = require('./baseController');
+const { BaseController } = require("./baseController");
 
 module.exports = class HealthController extends BaseController {
   constructor() {
@@ -7,11 +7,12 @@ module.exports = class HealthController extends BaseController {
 
   check(req, res) {
     try {
-      super.success(res, [], 'Health check is working...');
+      super.success(res, [], "Health check is working...");
     } catch (e) {
       e.code = 500;
-      e.message = 'Error accessing health check...';
+      e.message = "Error accessing health check...";
       super.error(res, e);
     }
   }
 };
+//

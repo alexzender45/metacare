@@ -25,7 +25,6 @@ class Films {
     const api_url = `${SWAPI_URL}/films`;
     const response_api = await axios.get(api_url);
     const repr = JSON.parse(stringify(response_api));
-    //sort the movies by release date
     const sort = _.sortBy(repr.data["results"], "release_date");
     //console.log(sort);
     const obj = await Film.findAll({
@@ -59,7 +58,6 @@ class Films {
     }
   }
 
-  // fetch film by id
   async getFilmById() {
     const response = await axios.get(`${SWAPI_URL}/films/${this.data}`);
     return response.data;

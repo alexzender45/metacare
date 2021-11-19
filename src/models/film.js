@@ -18,9 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "Films",
     }
   );
-  Film.associate = (/* models */) => {
-    // associations can be defined here
-  };
+  Film.associate = (/* models */) => {};
 
   return Film;
 };

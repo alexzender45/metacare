@@ -35,16 +35,11 @@ class Comments {
           ip_address,
         };
         Comment.create(comm);
-        // add new comment to the database
-
-        // Get the movie with the episode id we have submitted on the form and then update the comment
         let Allow = Film.findOne({ episode_id: comm.commentable_id });
-        Allow.then((doc) => {
-          Film.update(
-            { comment_count: doc.comment_count++ },
-            { where: { episode_id: comm.commentable_id } }
-          );
-        });
+        Film.findAndupdate(
+          { comment_count: Allow.comment_count + 1 },
+          { where: { episode_id: comm.commentable_id } }
+        );
         return {
           status: true,
           message: "comment created successfully",

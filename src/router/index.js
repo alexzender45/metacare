@@ -1,5 +1,5 @@
 const baseRoute = require("../core/routerConfig");
-
+// connect route to controller
 baseRoute.get("/", (req, res) =>
   res
     .status(200)

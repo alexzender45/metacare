@@ -16,9 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "Comments",
     }
   );
-  Comment.associate = (/* models */) => {
-    // associations can be defined here
-  };
+  Comment.associate = (/* models */) => {};
 
   return Comment;
 };

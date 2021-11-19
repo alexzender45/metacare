@@ -21,7 +21,7 @@ class Character {
 
     return movieCharacters;
   }
-  //
+  // fetchCharactersInMovie
   async fetchCharacterById() {
     const { search, movieId } = this.data;
     const movieData = await new Film(movieId).getFilmById();
