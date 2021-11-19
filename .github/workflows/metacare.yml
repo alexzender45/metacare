@@ -1,4 +1,4 @@
-name: Metacare
+name: Test
 
 on:
   push:
