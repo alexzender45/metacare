@@ -36,7 +36,7 @@ class Comments {
         };
         Comment.create(comm);
         let Allow = Film.findOne({ episode_id: comm.commentable_id });
-        Film.findAndupdate(
+        Film.update(
           { comment_count: Allow.comment_count + 1 },
           { where: { episode_id: comm.commentable_id } }
         );
