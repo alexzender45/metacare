@@ -11,7 +11,7 @@ exports.fetchMovies = async (req, res) => {
     return error(res, { code: err.code, message: err.message });
   }
 };
-
+//
 exports.getAllMoviesFromApi = async (req, res) => {
   try {
     const movies = await new Films().getAllMoviesFromApi();

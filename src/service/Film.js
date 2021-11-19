@@ -20,7 +20,7 @@ class Films {
     );
     return sortMovieByReleaseDate;
   }
-
+  //
   async getAllMoviesFromApi() {
     const api_url = `${SWAPI_URL}/films`;
     const response_api = await axios.get(api_url);

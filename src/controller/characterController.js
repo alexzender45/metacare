@@ -13,7 +13,7 @@ exports.fetchCharactersInMovie = async (req, res) => {
     return error(res, { code: err.code, message: err.message });
   }
 };
-
+//
 exports.fetchCharacterById = async (req, res) => {
   try {
     const search = req.query;

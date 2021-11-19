@@ -41,7 +41,7 @@ class Comments {
         let Allow = Film.findOne({ episode_id: comm.commentable_id });
         Allow.then((doc) => {
           Film.update(
-            { comment_count: doc.comment_count + 1 },
+            { comment_count: doc.comment_count++ },
             { where: { episode_id: comm.commentable_id } }
           );
         });

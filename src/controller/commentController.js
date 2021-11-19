@@ -18,7 +18,7 @@ exports.addComment = async (req, res) => {
     return error(res, { code: err.code, message: err.message });
   }
 };
-
+///
 exports.getComments = async (req, res) => {
   try {
     const movies = await new Comments(req.params.movieId).getComments();
